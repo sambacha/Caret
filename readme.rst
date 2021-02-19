@@ -1,7 +1,7 @@
-Caret
+Beacon
 =====
 
-Caret is a lightweight-but-powerful programmer's editor running as a Chrome
+Beacon is a lightweight-but-powerful programmer's editor running as a Chrome
 Packaged App. Inspired by Sublime and built on top of the Ace editing
 component, it offers:
 
@@ -12,13 +12,9 @@ component, it offers:
 -  hackable, synchronized configuration files
 -  project files and folder view
 -  fast project-wide string search
+-  a serial terminal emultor
 
-More information, links to Caret in the Chrome Web Store, and an
-external package file are available at http://thomaswilburn.net/caret.
-Documentation can be found in the
-`wiki <https://github.com/thomaswilburn/Caret/wiki>`_.
-
-You can also load Caret from source code, either to hack around on or
+You can also load Beacon from source code, either to hack around on or
 to try the absolute bleeding edge. You'll need to have Node and NPM
 installed first, then follow these steps:
 
@@ -29,9 +25,8 @@ installed first, then follow these steps:
    source
 3. Visit ``chrome://extensions`` and enable Developer Mode.
 4. Still on the extensions page, click the button marked "Load unpacked
-   extension..." and select the directory containing Caret's
+   extension..." and select the directory containing Beacon's
    manifest.json.
 
-If you use Caret and would like to show your appreciation, please
-consider donating to the `FSF's Fund to End Software
-Patents <https://my.fsf.org/civicrm/contribute/transact?reset=1&id=17>`__.
+Beacon is a fork of `Caret <https://github.com/thomaswilburn/Caret>`_ by Thomas Wilburn, modified to include the serial terminal emulator, `BeagleTerm <https://github.com/beagleterm/beagle-term>`_.
+

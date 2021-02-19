@@ -4,7 +4,7 @@ Module description - ui/\*
 cli.js
 ------
 
-Creates the UI and bindings for a "command line" that can run Caret
+Creates the UI and bindings for a "command line" that can run Beacon
 commands directly. Useful when testing a new command, since you don't
 need to change keys.json or menu.json in order to run it.
 

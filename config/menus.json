@@ -108,7 +108,7 @@
         ]
       },
       "divider",
-      { "label": "menuHelp", "command": "app:browse", "argument": "https:\/\/github.com\/thomaswilburn\/Caret\/wiki" },
+      { "label": "menuHelp", "command": "app:browse", "argument": "https:\/\/github.com\/jkrei0\/beacon\/wiki" },
       { "label": "menuCheckForUpdates", "command": "app:check-for-updates", "argument": "manual" },
       { "label": "menuAboutCaret", "command": "app:about", "retainFocus": true }
     ]

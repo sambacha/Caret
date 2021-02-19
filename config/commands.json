@@ -1,6 +1,6 @@
 [
-  { "command": "app:exit", "label": "Exit Caret" },
-  { "command": "app:about", "label": "About Caret" },
+  { "command": "app:exit", "label": "Exit Beacon" },
+  { "command": "app:about", "label": "About Beacon" },
   { "label": "Help", "command": "session:open-settings-defaults", "argument": "help" },
   { "label": "Check for Updates", "command": "app:check-for-updates", "argument": "manual" },
   

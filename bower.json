@@ -1,0 +1,7 @@
+{
+  "name": "beagleterm",
+  "homepage": "https://github.com/beagleterm/beagle-term",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

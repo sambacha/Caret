@@ -18,11 +18,11 @@ keyword.
 -  ``getPath``
 -  ``entry`` - contains the actual entry object.
 
-All storage in Caret, regardless of its actual backing structure, goes
+All storage in Beacon, regardless of its actual backing structure, goes
 through objects adhering to the File interface, which makes it much
 easier to open many types of data through the same tab/editor UI. It
 also makes persistence much more consistent and less verbose throughout
-Caret.
+Beacon.
 
 nullfile.js
 -----------

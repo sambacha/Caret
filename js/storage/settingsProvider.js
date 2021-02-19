@@ -151,7 +151,7 @@ define([
       type: "basic",
       iconUrl: "icon-128.png",
       title: "Confirm Emergency Reset",
-      message: "This will wipe out all your settings and return Caret to its initial condition. Are you sure you want to do this?",
+      message: "This will wipe out all your settings and return Beacon to its initial condition. Are you sure you want to do this?",
       buttons: [
         { title: "Yes, reset all data" },
         { title: "Cancel emergency reset" }

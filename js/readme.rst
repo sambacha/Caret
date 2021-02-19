@@ -1,23 +1,23 @@
 Module descriptions - core
 ==========================
 
-This document serves as basic documentation for Caret's AMD modules.
+This document serves as basic documentation for Beacon's AMD modules.
 It's not exhaustive, but it will serve as a starting place for anyone
 wanting to dive in a little deeper.
 
-Caret's execution starts in main.js, which mostly serves as bootstrap
+Beacon's execution starts in main.js, which mostly serves as bootstrap
 for the other modules. It also registers command listeners for the UI
 themes, various window events, and app-level commands like
 ``app:check-for-updates``. After that, we really get down to business.
 
 In addition to the module folders, which contain their own readme files,
 there are also folders for the current Ace build (ace) and any external
-libraries used by Caret, such as the ES6 Promises shim (lib).
+libraries used by Beacon, such as the ES6 Promises shim (lib).
 
 aceBindings.js
 --------------
 
-Takes care of any messiness between Caret and Ace APIs. Registers the
+Takes care of any messiness between Beacon and Ace APIs. Registers the
 ``ace:command`` listener, as well as a bunch of Sublime emulation
 commands. Exposes no external methods or data.
 
@@ -57,7 +57,7 @@ lifecycle, and random ``app:*`` commands.
 sessions.js
 -----------
 
-Manages Caret's tabs, including all UI interaction with the tab bar and
+Manages Beacons's tabs, including all UI interaction with the tab bar and
 the process of adding or removing tabs. Exposes a number of methods and
 manipulating the tab structure. Most of the actual session code is
 loaded from the ``/sessions`` folder, to make the file more manageable.
@@ -73,5 +73,5 @@ tab.js
 ------
 
 Exposes a Tab constructor to dependents, which is an augmented Ace
-EditorSession. Tabs do additional setup work to support Caret, as well
+EditorSession. Tabs do additional setup work to support Beacon, as well
 as adding methods for saving files and dropping retained file handles.
