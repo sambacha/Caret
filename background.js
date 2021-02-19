@@ -51,6 +51,13 @@ var openWindow = function() {
     commands = [];
     pending = null;
     chrome.storage.local.set({isOpen: true});
+    win.contentWindow.AddConnectedSerialId = function(id) {
+      connectedSerialId = id;
+    };
+    win.onClosed.addListener(function() {
+      chrome.serial.disconnect(connectedSerialId, function() {
+      });
+    });
   });
 }
 
@@ -116,7 +123,7 @@ window.emergencyReset = function() {
         type: "basic",
         iconUrl: "icon-128.png",
         title: "Emergency Reset Complete",
-        message: "Caret has been reset to the default settings."
+        message: "Beacon has been reset to the default settings."
       }, function() {});
     }
   };
