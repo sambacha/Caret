@@ -13466,6 +13466,7 @@ hterm.Terminal.IO.prototype.writeUTF16 = function(string) {
 hterm.Terminal.IO.prototype.println =
 hterm.Terminal.IO.prototype.writelnUTF16 = function(string) {
   this.writelnUTF8(lib.encodeUTF8(string));
+  console.log(string)
 };
 // SOURCE FILE: hterm/js/hterm_text_attributes.js
 // Copyright (c) 2012 The Chromium OS Authors. All rights reserved.

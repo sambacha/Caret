@@ -2,8 +2,9 @@ define([
     "storage/file",
     "command",
     "settings!ace,user",
-    "util/i18n"
-  ], function(File, command, Settings, i18n) {
+    "util/i18n",
+    "storage/syncFS"
+  ], function(File, command, Settings, i18n, sync) {
   /*
   Module for loading the editor, adding window resizing and other events. Returns the editor straight from Ace.
   */
@@ -30,6 +31,7 @@ define([
       option.setAttribute("value", theme.name);
       themes.appendChild(option);
     });
+    firstStartup()
     reset();
     //let main.js know this module is ready
     return "editor";
@@ -143,6 +145,26 @@ define([
     editor.focus();
     c();
   });
+  command.on("editor:save-theme", async function(theme, c) {
+    command.fire("editor:theme", theme)
+    exp = /"defaultTheme": ?".+?"/
+    user = await sync.get("user.json")
+    user = user.replace(exp, `"defaultTheme":"${theme}"`)
+    console.log(user, user.match(exp))
+    console.log(theme)
+    await sync.set("user.json", user)
+  })
+  command.on("editor:save-ui-theme", async function(theme, c) {
+    //command.fire("editor:theme", theme)
+    exp = /"uiTheme": ?".+?"/
+    user = await sync.get("user.json")
+    user = user.replace(exp, `"uiTheme":"${theme}"`)
+    console.log(user, user.match(exp))
+    console.log(theme)
+    await sync.set("user.json", user)
+    command.fire("init:restart")
+    command.fire("init:update-theme", theme)
+  })
   
   command.on("editor:print", function(c = noop) {
     ace.require("ace/config").loadModule("ace/ext/static_highlight", function(highlighter) {

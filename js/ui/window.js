@@ -5,19 +5,20 @@ define([
 
   var frame = chrome.app.window.current();
 
-  var setTheme = async function() {
+  var setTheme = async function(to) {
     var data = await Settings.pull("user");
     var themes = {
       "dark": "css/caret-dark.css",
       "twilight": "css/caret-twilight.css",
       "light": "css/caret.css"
     };
-    var theme = data.user.uiTheme || "light";
+    var theme = to || data.user.uiTheme || "light";
     var url = themes[theme] || themes.dark;
     document.querySelector("#theme").setAttribute("href", url);
   };
   setTheme();
   command.on("init:restart", setTheme);
+  command.on("init:update-theme", setTheme)
 
   command.on("app:minimize", function() {
     frame.minimize();

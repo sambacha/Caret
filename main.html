@@ -4,6 +4,7 @@
     <title>Beacon</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/terminal.css" />
+    <link rel="stylesheet" type="text/css" href="" id="terminalUITheme"/>
     <link rel="stylesheet" type="text/css" href="css/caret.css" id="base-styles" charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/caret.css" id="theme" charset="UTF-8">
     <!--<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />-->
@@ -67,10 +68,6 @@
       <ul class="results"></ul>
     </div>
 
-    <!--<div id="terminal">
-      <iframe id="terminal-if" src="/../../beagle/beagle-term/app/index.html"></iframe>
-    </div>-->
-
     <div id="embeddedterminal">
 
       <div id="terminal"></div>
@@ -78,28 +75,63 @@
       <div class="modal fade" role="dialog" id="bottom-menu" data-backdrop="static" data-keyboard="false">
         <button id="m4RunOrRestart" class="controls-button btn btn-primary">Run</button>
         <button id="m4Stop" class="controls-button btn btn-highlight">Stop</button>
-        <button id="m4Hash" class="controls-button btn">#</button>
-        <button id="m4Help" class="controls-button btn">Options</button>
+        <button id="copyTerminal" class="controls-button btn" title="Save terminal to file">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+          </svg>
+        </button>
+        <button id="clearTerminal" class="controls-button btn" title="Clear Terminal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+        <button id="m4Help" class="controls-button btn" title="Options">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+          </svg>
+        </button>
       </div>
 
       <div class="modal fade" role="dialog" id="options-menu" data-backdrop="static" data-keyboard="false">
         <div class="modal-header">
           <h4 class="modal-title">Terminal Options</h4>
         </div>
-        <span class="section"><b>Appearance</b></span>
+        <span class="section"><b>Position & Size</b></span>
         <br><br>
         <label class="control-label col-sm-2">Dock to</label>
         <select class="form-control small" id="appearance-dockto">
           <option value="bottom">Bottom</option>
-          <option value="right">Side</option>
+          <option value="right">Right</option>
+          <option value="hidden">Hidden</option>
         </select>
         <label class="control-label col-sm-2">Size</label>
         <select class="form-control small" id="appearance-size">
+          <option value="400">Very Large</option>
           <option value="350">Large</option>
           <option value="250" selected>Medium</option>
-          <option value="150">Small</option>
+          <option value="200">Small</option>
+          <option value="150">Very Small</option>
         </select><br><br>
-
+        <span class="section"><b>Appearance</b></span>
+        <br><br>
+        <label class="control-label col-sm-2">Light Theme</label>
+        <select class="form-control small" id="appearance-theme">
+          <option value="light">Beacon Light</option>
+          <option value="grey">Light Grey</option>
+          <option value="dark">Beacon Dark</option>
+          <option value="twilight">Twilight</option>
+        </select>
+        <label class="control-label col-sm-2">Dark Theme</label>
+        <select class="form-control small" id="appearance-theme-dark">
+          <option value="light">Beacon Light</option>
+          <option value="dark"selected>Beacon Dark</option>
+          <option value="twilight">Twilight</option>
+          <option value="grey">Dark Grey</option>
+        </select><br><br>
         <span class="section"><b>Menu Buttons</b></span>
         <br><br>
         <label class="control-label col-sm-2">Run</label>
@@ -120,17 +152,9 @@
           <option value="">Ctrl+V</option>
           <option value="">Ctrl+F</option>
           <option value="">Ctrl+Q</option>
-        </select>
-        <label class="control-label col-sm-2">#</label>
-        <select class="form-control small" id="hashcmd-selection">
-          <option value="">Ctrl+Q</option>
-          <option value="">Ctrl+C</option>
-          <option value="">Ctrl+D</option>
-          <option value="">Ctrl+R</option>
-          <option value="">Ctrl+V</option>
-          <option value="">Ctrl+F</option>
-        </select>
-        <br><br>
+        </select><br>
+        <br>
+
         <button type="button" id="m4CloseHelp" class="btn btn-primary float" data-dismiss="modal">Okay</button>
       </div>
       
@@ -230,19 +254,18 @@
           </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      
-      <script src="bower_components/jquery/dist/jquery.min.js"></script>
-      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-      <script src="js/lib/hterm_all.min.js"></script>
-      <script src="js/neotrellis.js"></script>
-      <script src="js/draw_ui.js"></script>
-      <script src="js/index.js"></script>
-
-    </div>-->
+    </div>
 
     <script src="js/ace/ace.js"></script>
     <script data-main="./js/main.js" src="require.js"></script>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/lib/hterm_all.min.js"></script>
+    <script src="js/startupText.js"></script>
+    <script src="js/neotrellis.js"></script>
+    <script src="js/draw_ui.js"></script>
+    <script src="js/index.js"></script>
 
   </body>
 </html>

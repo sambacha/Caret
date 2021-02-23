@@ -9,9 +9,18 @@
   },
   "aboutHomePage": { "message": "Home Page" },
   "aboutSupport": { "message": "Support" },
+  "aboutBugReport": { "message": "Report a Bug" },
   "aboutLicense": {
     "message": "Beacon is available under a GPL license, which means that the <a href=\"https://github.com/jkrei0/beacon\" target=_blank>source code</a> is available for you to use and modify."
   },
+
+  "simpleSettingsTitle": { "message": "Beacon Simple Settings"},
+  "simpleSettingsTheme": { "message": "Editor Theme"},
+  "simpleSettingsUITheme": { "message": "Theme"},
+  "simpleSettingsDefaultThemes": { "message": "Default Themes"},
+  "simpleSettingsFonts": { "message": "Fonts & Styles"},
+  "simpleSettingsFontFamily": { "message": "Font Family"},
+  "simpleSettingsFontSize": { "message": "Font Size"},
 
   "menuFile": { "message": "File" },
   "menuNewFile": { "message": "New File" },
@@ -72,6 +81,7 @@
   "menuClearProject": { "message": "Clear Project" },
 
   "menuSettings": { "message": "Settings" },
+  "menuSimplePrefs": { "message": "Simple Settings" },
   "menuUserPrefs": { "message": "User Preferences" },
   "menuKeyboard": { "message": "Keyboard" },
   "menuMenus": { "message": "Menus" },

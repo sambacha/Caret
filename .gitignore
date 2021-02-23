@@ -1,5 +1,7 @@
 node_modules/
 css/*.css
-!css/main.css
+!css/terminal.css
+!css/terminal-light.css
+!css/terminal-twilight.css
 build/
 bower_components/

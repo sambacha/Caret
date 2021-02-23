@@ -167,6 +167,34 @@ define([
   command.on("init:startup", menu.create.bind(menu));
   command.on("init:restart", menu.create.bind(menu));
 
+  var aceConfig = Settings.get("ace");
+  var userConfig = Settings.get("user");
+  command.on("session:open-simple-settings", function() {
+    inflate.load("templates/simpleSettings.html").then(function() {
+      aceThemes = "";
+      dark = () => { if(userConfig.uiTheme == "dark" ){return "selected";}else{return "";}}
+      light = () => { if(userConfig.uiTheme == "light" ){return "selected";}else{return "";}}
+      twilight = () => { if(userConfig.uiTheme == "twilight" ){return "selected";}else{return "";}}
+      uiThemes = `
+        <option value="dark" ${dark()}>Dark</option>
+        <option value="light" ${light()}>Light</option>
+        <option value="twilight"${twilight()}>Twilight</option>`
+      aceConfig.themes.forEach(function(theme) {
+        selected = ()=>{
+          if(theme.name == userConfig.defaultTheme){return "selected";}else{return "";}
+        }
+        aceThemes += `<option value="${theme.name}" ${selected()}>${theme.label}</option>`;
+      });
+      dialog(
+        inflate.getHTML("templates/simpleSettings.html", {
+          version: chrome.runtime.getManifest().version,
+          aceThemes: aceThemes,
+          uiThemes: uiThemes
+        })
+      );
+    });
+  });
+
   command.on("app:about", function() {
     inflate.load("templates/about.html").then(function() {
       dialog(

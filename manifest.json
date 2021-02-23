@@ -1,11 +1,12 @@
 {
   "name": "Beacon",
   "description": "Professional text editing for Chrome and Chrome OS",
-  "version": "1.8.25",
+  "version": "1.0.1",
   "manifest_version": 2,
   "default_locale": "en",
   "icons": {
-    "128": "icon-128.png"
+    "128": "icon-128.png",
+    "64": "icon-64.png"
   },
   "app": {
     "background": {

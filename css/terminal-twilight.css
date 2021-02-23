@@ -1,0 +1,55 @@
+#terminal {
+  background-color: #151530;
+  color: #BBB;
+}
+
+div.modal.fade {
+  color: #BBB;
+  background: #090915;
+}
+div.modal.fade#bottom-menu {
+  color: #BBB;
+}
+.form-control {
+  border-bottom-color: #35467A;
+  color: #BBB;
+  background: #090915;
+}
+.form-control:hover {
+  background: #151530;
+  border-bottom-color: #35467A;
+}
+.btn {
+  color: #BBB;
+  background: #090915;
+  border-bottom-color: #151530;
+}
+.btn.btn-primary {
+  color: #BBB;
+  background: #090915;
+  border-bottom-color: #35467A;
+}
+.btn:hover {
+  background: #151530;
+  border-bottom-color: #151530;
+}
+.btn-primary:hover {
+  background: #151530;
+  border-bottom-color: #35467A;
+}
+.btn-highlight {
+  border-bottom-color: rgb(235, 195, 108);
+}
+.btn:disabled {
+  color: #BBB;
+  border-bottom-color: #000;
+  cursor: default;
+}
+.btn:hover:disabled {
+  color: #BBB;
+  background: #090915;
+  border-bottom-color: #000;
+}
+#m4Stop:disabled:after {
+  content: 'ped'
+}

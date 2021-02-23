@@ -1,0 +1,55 @@
+#terminal {
+  background-color: #AAA;
+  color: #111;
+}
+
+div.modal.fade {
+  color: #111;
+  background: #f7f7f7;
+}
+div.modal.fade#bottom-menu {
+  color: #111;
+}
+.form-control {
+  border-bottom-color: #808;
+  color: #111;
+  background: #f7f7f7;
+}
+.form-control:hover {
+  background: #CCC;
+  border-bottom-color: #808;
+}
+.btn {
+  color: #111;
+  background: #f7f7f7;
+  border-bottom-color: #AAA;
+}
+.btn.btn-primary {
+  color: #111;
+  background: #f7f7f7;
+  border-bottom-color: #808;
+}
+.btn:hover {
+  background: #CCC;
+  border-bottom-color: #AAA;
+}
+.btn-primary:hover {
+  background: #CCC;
+  border-bottom-color: #808;
+}
+.btn-highlight {
+  border-bottom-color: rgb(235, 195, 108);
+}
+.btn:disabled {
+  color: #aaa;
+  border-bottom-color: #000;
+  cursor: default;
+}
+.btn:hover:disabled {
+  color: #aaa;
+  background: #f7f7f7;
+  border-bottom-color: #000;
+}
+#m4Stop:disabled:after {
+  content: 'ped'
+}

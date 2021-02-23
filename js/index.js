@@ -58,7 +58,7 @@ var Crosh = function(argv) {
 
     this.io.onVTKeystroke = this.sendString_.bind(this, true /* fromKeyboard */);
     this.io.sendString = this.sendString_.bind(this, false /* fromKeyboard */);
-    this.io.println('Beacon Terminal optimised for the NeoTrellisM4. [Github repo coming soon]');
+    this.io.println('Beacon Serial Terminal for Chrome and ChromeOS. https://github.com/jkrei0/beacon');
     inputOutput = this.io;
     self = this;
 
@@ -146,6 +146,7 @@ window.onload = function() {
   hterm.defaultStorage = new lib.Storage.Chrome(chrome.storage.sync);
   var t = new hterm.Terminal('opt_profileName');
   t.decorate(document.querySelector('#terminal'));
+  htermTerminalElement = t
 
   t.onTerminalReady = function() {
     UI_INSTANCE.OnHtermReady();
