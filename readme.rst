@@ -28,5 +28,3 @@ installed first, then follow these steps:
    extension..." and select the directory containing Beacon's
    manifest.json.
 
-Beacon is a fork of `Caret <https://github.com/thomaswilburn/Caret>`_ by Thomas Wilburn, modified to include the serial terminal emulator, `BeagleTerm <https://github.com/beagleterm/beagle-term>`_.
-
